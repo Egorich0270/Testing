@@ -1,4 +1,4 @@
-def this_ez(a):   
+def isEz(a):
     flag = True
     a = int(a)
     for x in range(1,(int((a**0.5)+1))):
@@ -17,7 +17,7 @@ def simbv(num,sys=10):
     while num // int(sys) != 0:
         count += 1
         num //= int(sys)
-    return (count)
+    return (count+1)
         
 
 
