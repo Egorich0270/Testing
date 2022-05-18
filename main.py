@@ -1,5 +1,5 @@
 
 
-if __name__ == '__main__': print('yes')
+if __name__ == '__main__': print(__name__)
 
 
