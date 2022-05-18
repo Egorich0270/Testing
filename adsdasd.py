@@ -29,8 +29,3 @@ def simbv(num,sys=10):
 
 
 
-
-
-
-while 1:
-    print(simbv(int(input()),))
