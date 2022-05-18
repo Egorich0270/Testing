@@ -7,25 +7,9 @@ def isEz(a):
                 flag = False
                 break
     return(flag)
-
-
-
-
-
 def simbv(num,sys=10):
     count=0
     while num // int(sys) != 0:
         count += 1
         num //= int(sys)
     return (count+1)
-        
-
-
-
-
-
-
-
-
-
-
