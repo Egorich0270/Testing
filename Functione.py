@@ -21,5 +21,8 @@ def attack(hp):
 def sleep(hp):
     heal = 20
     return hp+heal
-def statChec(hp): return hp
+def statChec(hp):
+    print(hp)
+    return (hp)
+
 
