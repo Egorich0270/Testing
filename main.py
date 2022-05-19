@@ -1,4 +1,4 @@
-from adsdasd import *
+from Functione import *
 
 if __name__ == '__main__': print(isEz(simbv(789762)))
 

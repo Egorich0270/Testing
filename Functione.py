@@ -13,3 +13,4 @@ def simbv(num,sys=10):
         count += 1
         num //= int(sys)
     return (count+1)
+
