@@ -24,5 +24,9 @@ def sleep(hp):
 def statChec(hp):
     print(hp)
     return (hp)
+def shop(babki):
+    prises = {'1': 1000, '2': 2000}
+    otv = input(f'Что вы хотите купить?\n1)Доспех за {prises.get(str(1))}\n2)Кровать за {prises.get(str(2))}\n3)Ничего?\n')
+
 
 
