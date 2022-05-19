@@ -6,7 +6,7 @@ if __name__ == '__main__':
     while True:
         HP = 100
         while HP > 0:#Game
-            comand = input('1.Атака\n2.Сон\n3.Статы\n\nВведите команду')
+            comand = input('1.Атака\n2.Сон\n3.Статы\n\nВведите команду\n')
             if comand in main.keys():
                 HP = main.get(comand)(HP)
         print('чувак ты труп')
