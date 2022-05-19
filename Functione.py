@@ -13,4 +13,7 @@ def simbv(num,sys=10):
         count += 1
         num //= int(sys)
     return (count+1)
+def attack(): return 6
+def sleep(): return 'ye'
+def statChec(): return 'good'
 
