@@ -31,5 +31,9 @@ def shop(babki):
     prises = {'1': 1000, '2': 2000}
     otv = input(f'Что вы хотите купить?\n1)Доспех за {prises.get(str(1))}\n2)Кровать за {prises.get(str(2))}\n3)Ничего?\n')
 
+def pulse(a):
+    if a < 0: return 0
+    return (pulse(a-1))
+
 
 
