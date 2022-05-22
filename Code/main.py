@@ -1,4 +1,4 @@
-from Functione import *
+from Code.Functione import *
 
 if __name__ == '__main__':
     main = {'1': attack, '2': sleep, '3': statChec, '4':shop}
