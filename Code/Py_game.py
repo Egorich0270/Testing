@@ -8,6 +8,7 @@ class MainH:
 
     def statChec(self):
         print(self.HP)
+        input()
 
     def sleep(self):
         self.HP+=12
