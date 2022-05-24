@@ -1,5 +1,4 @@
 import random
-from random import *
 class Card:
 
     def __init__(self, suit, power):
@@ -20,14 +19,19 @@ card_deck_preset = [Card(d, x) for x in card_power for d in card_suit]
 
 while True:
     card_deck = card_deck_preset
-    while len(card_deck)!=0:
-        command = input('\n1)вывести колоду\n2)выбрасить карту\n3)сортировать\n4)перемешать\n')
+    while len(card_deck) != 0:
+        command = input('\n1)вывести колоду\n2)выбрасить карту\n3)сортировать\n4)перемешать\n5)перегенерировать\n')
         if command == '1':
             deck_reader(card_deck)
         elif command == '2':
+            num = random.randint(0,len(card_deck)-1)
+            card_deck[num].check_card()
+            card_deck.remove(card_deck[num])
             pass
         elif command == '3':
             pass
-        elif command =='4':
-            card_deck = random.shuffle(card_deck)
+        elif command == '4':
+            random.shuffle(card_deck)
             deck_reader(card_deck)
+        elif command == '5':
+            pass
