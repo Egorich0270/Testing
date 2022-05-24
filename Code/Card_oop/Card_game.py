@@ -2,7 +2,8 @@ import random
 
 
 class Card:
-    card_power_ter = {'2': 2, '3': 3, '4': 4, '5': 5, '6': 6, '7': 7, '8': 8, '9': 9, '10': 10, 'J': 11, 'Q': 12, 'K': 13, 'A': 14}
+    card_power_ter = {'2': 2, '3': 3, '4': 4, '5': 5, '6': 6, '7': 7,
+                      '8': 8, '9': 9, '10': 10, 'J': 11, 'Q': 12, 'K': 13, 'A': 14}
 
     def __init__(self, suit, power):
         self.__suit = suit
@@ -13,6 +14,12 @@ class Card:
             return self.check_card()
         else:
             return other.check_card()
+
+    def __sub__(self, other):
+        if Card.card_power_ter.get(self.__power) > Card.card_power_ter.get(other.__power):
+            return other
+        else:
+            return self
 
     def check_card(self):
         print(f'([{self.__suit}] {self.__power})', end=' ')
@@ -51,5 +58,5 @@ while True:
             card_deck[num-1].check_card()
             print()
             print(card_deck[num] + card_deck[num-1], 'WIN')
-            card_deck.remove(card_deck[num])
-            card_deck.remove(card_deck[num - 1])
+            card_deck.remove(card_deck[num] - card_deck[num-1])
+
