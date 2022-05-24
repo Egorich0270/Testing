@@ -59,4 +59,3 @@ while True:
             print()
             print(card_deck[num] + card_deck[num-1], 'WIN')
             card_deck.remove(card_deck[num] - card_deck[num-1])
-
