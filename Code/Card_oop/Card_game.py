@@ -4,6 +4,7 @@ import random
 class Card:
     card_power_ter = {'2': 2, '3': 3, '4': 4, '5': 5, '6': 6, '7': 7,
                       '8': 8, '9': 9, '10': 10, 'J': 11, 'Q': 12, 'K': 13, 'A': 14}
+    suit_list = {'♦': 4, '♠': 3, '♥': 1, '♣': 2}
 
     def __init__(self, suit, power):
         self.suit = suit
@@ -47,14 +48,24 @@ class Carddeck:
                     self.card_deck_preset[j], self.card_deck_preset[j+1] = self.card_deck_preset[j+1], self.card_deck_preset[j]
         self.deck_reader()
 
+    def deck_sort_suit(self):
+        for i in range(len(self.card_deck_preset)):
+            for j in range(len(self.card_deck_preset)-1-i):
+                if Card.suit_list.get(self.card_deck_preset[j].suit) > Card.suit_list.get(self.card_deck_preset[j+1].suit):
+                    self.card_deck_preset[j], self.card_deck_preset[j+1] = self.card_deck_preset[j+1], self.card_deck_preset[j]
+        self.deck_reader()
+
     def __len__(self):
         return len(self.card_deck_preset)
+
+    def __del__(self):
+        print('Колода кончилась... Как и твоё детство')
 
 
 while True:
     card_deck = Carddeck()
     while len(card_deck) != 0:
-        command = input('\n1)вывести колоду\n2)выбрасить карту\n3)сортировать\n4)перемешать\n5)дуэль\n')
+        command = input('\n1)вывести колоду\n2)выбрасить карту\n3)сортировать\n4)перемешать\n5)сортировка по масти\n')
         if command == '1':
             card_deck.deck_reader()
         elif command == '2':
@@ -65,5 +76,5 @@ while True:
             random.shuffle(card_deck.card_deck_preset)
             card_deck.deck_reader()
         elif command == '5':
-            pass
+            card_deck.deck_sort_suit()
 

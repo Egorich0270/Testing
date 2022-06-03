@@ -39,4 +39,4 @@ def generate_hero():
 
 while True:
     hero_list = generate_hero()
-    print(Hero.present(hero_list[int(input('prosmotr'))]))
+    print(Hero.present(hero_list[int(input('prosmotr'))-1]))
